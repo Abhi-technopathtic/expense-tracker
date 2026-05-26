@@ -13,8 +13,9 @@ const upload = multer({
 });
 
 const VALID_CATEGORIES = [
+  'Game', 'Snacks', 'Online Shopping', 'Washing Machine', 'Miscellaneous', 'Pocket Money',
   'Food & Dining','Transportation','Shopping','Entertainment','Bills & Utilities',
-  'Healthcare','Education','Travel','Personal Care','Groceries','Rent & Housing',
+  'Healthcare','Education','Travel','Personal Care','Rent & Housing',
   'EMI & Loans','Salary','Freelance','Business','Investment','Gift','Bonus','Other',
 ];
 
