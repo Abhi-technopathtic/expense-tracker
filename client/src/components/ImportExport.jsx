@@ -284,7 +284,7 @@ const ImportExport = () => {
 
             {/* Info */}
             <p className="ie-info">
-              📌 Import supports <strong>ExpensePro Excel template</strong> or any spreadsheet with Date, Title, Type, Category, Amount columns. PDF import works with <strong>our exported PDFs</strong>.
+              📌 Import supports <strong>XpensePro Excel template</strong> or any spreadsheet with Date, Title, Type, Category, Amount columns. PDF import works with <strong>our exported PDFs</strong>.
             </p>
           </div>
         )}

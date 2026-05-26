@@ -40,7 +40,7 @@ const Login = () => {
             <Wallet size={28} className="text-white" />
           </div>
           <h1 className="auth-logo-text">
-            Expense<span className="text-accent">Pro</span>
+            Xpense<span className="text-accent">Pro</span>
           </h1>
         </div>
 

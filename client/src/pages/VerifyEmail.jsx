@@ -54,7 +54,7 @@ const VerifyEmail = () => {
       const { data } = await api.post('/auth/verify-otp', { email, otp: code });
       if (data.success) {
         localStorage.setItem('expense_token', data.token);
-        toast.success('Email verified! Welcome to ExpensePro 🎉');
+        toast.success('Email verified! Welcome to XpensePro 🎉');
         navigate('/dashboard');
       }
     } catch (err) {

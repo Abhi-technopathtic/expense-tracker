@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }) => {
     return (
       <div className="page-loader">
         <div className="loader-orb" />
-        <p>Loading ExpensePro...</p>
+        <p>Loading XpensePro...</p>
       </div>
     );
   }

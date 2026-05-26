@@ -60,7 +60,7 @@ const AdminPanel = () => {
           </div>
           <div>
             <h1 className="admin-title">Admin Panel</h1>
-            <p className="admin-subtitle">ExpensePro Management</p>
+            <p className="admin-subtitle">XpensePro Management</p>
           </div>
         </div>
         <div className="admin-header-actions">

@@ -16,7 +16,7 @@ export const exportToPDF = (transactions, summary, userName = 'User') => {
   doc.setTextColor(129, 140, 248);
   doc.setFontSize(22);
   doc.setFont('helvetica', 'bold');
-  doc.text('ExpensePro', 14, 18);
+  doc.text('XpensePro', 14, 18);
 
   doc.setTextColor(200, 200, 220);
   doc.setFontSize(10);
@@ -122,10 +122,10 @@ export const exportToPDF = (transactions, summary, userName = 'User') => {
     doc.setPage(i);
     doc.setFontSize(8);
     doc.setTextColor(100, 100, 130);
-    doc.text(`ExpensePro — Page ${i} of ${pageCount}`, pageW / 2, doc.internal.pageSize.getHeight() - 8, { align: 'center' });
+    doc.text(`XpensePro — Page ${i} of ${pageCount}`, pageW / 2, doc.internal.pageSize.getHeight() - 8, { align: 'center' });
   }
 
-  doc.save(`ExpensePro_Report_${new Date().toISOString().split('T')[0]}.pdf`);
+  doc.save(`XpensePro_Report_${new Date().toISOString().split('T')[0]}.pdf`);
 };
 
 // ─── EXCEL EXPORT ─────────────────────────────────────────────────────────────
@@ -154,7 +154,7 @@ export const exportToExcel = (transactions, summary) => {
 
   // ── Sheet 2: Summary ──
   const summaryData = [
-    ['ExpensePro — Financial Summary'],
+    ['XpensePro — Financial Summary'],
     ['Generated', new Date().toLocaleDateString('en-IN')],
     [],
     ['Metric', 'Amount (₹)'],
@@ -167,7 +167,7 @@ export const exportToExcel = (transactions, summary) => {
   summarySheet['!cols'] = [{ wch: 22 }, { wch: 18 }];
   XLSX.utils.book_append_sheet(wb, summarySheet, 'Summary');
 
-  XLSX.writeFile(wb, `ExpensePro_Export_${new Date().toISOString().split('T')[0]}.xlsx`);
+  XLSX.writeFile(wb, `XpensePro_Export_${new Date().toISOString().split('T')[0]}.xlsx`);
 };
 
 // ─── EXCEL IMPORT ─────────────────────────────────────────────────────────────
@@ -280,5 +280,5 @@ export const downloadExcelTemplate = () => {
   ws['!cols'] = [{ wch: 14 }, { wch: 30 }, { wch: 10 }, { wch: 22 }, { wch: 14 }, { wch: 30 }];
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Transactions');
-  XLSX.writeFile(wb, 'ExpensePro_Import_Template.xlsx');
+  XLSX.writeFile(wb, 'XpensePro_Import_Template.xlsx');
 };

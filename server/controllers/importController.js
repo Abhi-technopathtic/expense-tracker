@@ -77,7 +77,7 @@ const importFromPDF = [
       const parsed = [];
       for (const line of lines) {
         // Skip header lines, summary lines, page footers
-        if (/date|title|type|category|note|amount|expensepro|report|balance|income|expense|page \d/i.test(line) && !/₹/.test(line)) continue;
+        if (/date|title|type|category|note|amount|expensepro|xpensepro|report|balance|income|expense|page \d/i.test(line) && !/₹/.test(line)) continue;
         if (/generated|report for|total records/i.test(line)) continue;
 
         const tx = parseLineToTransaction(line);
