@@ -1,6 +1,9 @@
 const Transaction = require('../models/Transaction');
 const multer      = require('multer');
-const pdfParse    = require('pdf-parse');
+let pdfParse = require('pdf-parse');
+if (typeof pdfParse !== 'function' && pdfParse.default) {
+  pdfParse = pdfParse.default;
+}
 
 // Multer — memory storage (no disk writes)
 const upload = multer({
