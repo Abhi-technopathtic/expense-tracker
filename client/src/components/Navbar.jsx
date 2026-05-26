@@ -24,7 +24,7 @@ const Navbar = () => {
             <Wallet size={20} className="text-white" />
           </div>
           <span className="logo-text">
-            Expense<span className="logo-accent">Pro</span>
+            Xpense<span className="logo-accent">Pro</span>
           </span>
         </Link>
 
