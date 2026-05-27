@@ -118,15 +118,29 @@ const importFromPDF = [
 
       // Execute pdf parsing safely using modern pdf2json
       const pdfData = await executePDFParse(req.file.buffer);
+      console.log("PDF parsed raw text characters count:", pdfData.text.length);
       const lines   = pdfData.text.split('\n').map((l) => l.trim()).filter((l) => l.length > 5);
+      console.log("Reconstructed PDF Lines count:", lines.length);
 
       const parsed = [];
       for (const line of lines) {
-        if (/date|title|type|category|note|amount|expensepro|xpensepro|report|balance|income|expense|page \d/i.test(line) && !/₹/.test(line)) continue;
-        if (/generated|report for|total records/i.test(line)) continue;
+        console.log("Processing Line:", line);
+        if (/date|title|type|category|note|amount|expensepro|xpensepro|report|balance|income|expense|page \d/i.test(line) && !/₹/.test(line)) {
+          console.log("Bypassed header/footer line:", line);
+          continue;
+        }
+        if (/generated|report for|total records/i.test(line)) {
+          console.log("Bypassed report info line:", line);
+          continue;
+        }
 
         const tx = parseLineToTransaction(line);
-        if (tx) parsed.push(tx);
+        if (tx) {
+          console.log("Successfully extracted transaction:", tx.title, tx.amount);
+          parsed.push(tx);
+        } else {
+          console.log("Line did not match transaction pattern:", line);
+        }
       }
 
       const seen   = new Set();
